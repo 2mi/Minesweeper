@@ -2,7 +2,7 @@
 //
 #include "resource.h"
 /////////////////////////////////////////////////////////////////////////////
-// 中文(简体，中国) resources
+// 涓枃(绠�浣擄紝涓浗) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
 LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
@@ -31,12 +31,12 @@ BEGIN
         BLOCK "080404b0"
         BEGIN
             VALUE "Comments", "Simple Application/0"
-            VALUE "CompanyName", "ifaner.net (Canton)"
+            VALUE "CompanyName", "ifaner.net"
             VALUE "FileDescription", "Minesweeper Under Console"
             VALUE "FileVersion", "3, 0, 0, 0"
             VALUE "InternalName", "529"
-            VALUE "LegalCopyright", "ifaner.net Copyright (C) 2016/8"
-            VALUE "LegalTrademarks", "ifaner.net Co. Ltd."
+            VALUE "LegalCopyright", "ifaner.net"
+            VALUE "LegalTrademarks", "ifaner.net"
             VALUE "OriginalFilename", "minesweeper.exe"
             VALUE "PrivateBuild", "NSIGNING"
             VALUE "ProductName", "minesweeper.exe"
@@ -75,7 +75,7 @@ END
 
 #endif    // APSTUDIO_INVOKED
 
-#endif    // 中文(简体，中国) resources
+#endif    // 涓枃(绠�浣擄紝涓浗) resources
 /////////////////////////////////////////////////////////////////////////////
 
 
