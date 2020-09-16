@@ -1,0 +1,103 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Debug",
+            "type": "shell",
+            "command": "cl",
+            "args": [
+                "/std:c++latest",
+                "/DDEBUG",
+                "/Od",
+                "/GR",
+                "/Gy",
+                "/Zi",
+                "/EHa",
+                "/Fe${workspaceFolder}\\${workspaceRootFolderName}",
+                "${fileDirname}\\*.cpp",
+                "/link",
+                "/INCREMENTAL"
+            ],
+            "group": "build",
+            "presentation": {
+                "reveal": "silent"
+            },
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "Release",
+            "type": "shell",
+            "command": "cl",
+            "args": [
+                "/std:c++latest",
+                "/Ox",
+                "/GL",
+                "/GA",
+                "/Gr",
+                "/GA",
+                "/GF",
+                "/Gs",
+                "/EHs",
+                "/W4",
+                "/Fe${workspaceFolder}\\${workspaceRootFolderName}",
+                "${fileDirname}\\*.cpp",
+                "/link",
+                "/RELEASE",
+                "/OPT:REF",
+                "/WX",
+                "*.lib"
+            ],
+            //"dependsOn": ["Clean"],
+            "group": "build",
+            "presentation": {
+                "reveal": "silent"
+            },
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "Check",
+            "type": "shell",
+            "command": "cl",
+            "args": [
+                "/Zs",
+                "/std:c++latest",
+                "/EHs",
+                "/W4",
+                "${file}"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "silent"
+            },
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "Clean",
+            "type": "shell",
+            "command": "del *.obj & del *.pdb & del *.ilk & del *.res & del *.lib",
+            "group": "test",
+            "presentation": {
+                "reveal": "silent"
+            },
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "make_res",
+            "type": "shell",
+            "command": "rc ${workspaceRootFolderName}.rc & cvtres /OUT:${workspaceRootFolderName}.lib /MACHINE:X64 ${workspaceRootFolderName}.res",
+            "args": [
+                ""
+            ],
+            "group": "test",
+            "presentation": {
+                "reveal": "silent"
+            },
+            "problemMatcher": "$msCompile"
+        }
+    ]
+}
